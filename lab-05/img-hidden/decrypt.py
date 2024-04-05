@@ -11,7 +11,7 @@ def decode_image(encoded_image_path):
             pixel = img.getpixel((col, row))
 
             for color_channel in range (3): 
-                binary_message += format (pixel [color_channel], '08b') [-1]
+                binary_message += format(pixel[color_channel], '08b') [-1]
 
     message = ""
     for i in range(0, len (binary_message), 8):
@@ -19,6 +19,7 @@ def decode_image(encoded_image_path):
         if char== '\0': # Kết thúc thông điệp khi gặp dầu '\0'
             break
         message += char
+    
     return message
 
 def main():
@@ -27,7 +28,7 @@ def main():
         return
 
     encoded_image_path = sys.argv[1]
-    decoded_message = decode_image (encoded_image_path)
+    decoded_message = decode_image(encoded_image_path)
     print("Decoded message:", decoded_message)
 
 if __name__ == "__main__":

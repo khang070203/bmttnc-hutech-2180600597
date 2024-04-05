@@ -48,7 +48,7 @@ class MyApp(QMainWindow):
     def call_api_decrypt(self):
         url = "http://127.0.0.1:5000/api/caesar/decrypt"
         payload = {
-            "cipher_text": self.ui.txtplaintext.toPlainText(),
+            "cipher_text": self.ui.txtcptext.toPlainText(),
             "key": self.ui.txtkey.toPlainText()
         }
         try:
@@ -81,4 +81,3 @@ if __name__ == "__main__":
     window = MyApp()
     window.show()
     sys.exit(app.exec_())
-    
